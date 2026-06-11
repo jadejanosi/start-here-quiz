@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Should You Start? — Jade Janosi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal-dark:   #085041;
+  --teal-mid:    #1D9E75;
+  --teal-light:  #E1F5EE;
+  --teal-border: #9FE1CB;
+  --teal-bg:     #F4FBFA;
+  --white:       #ffffff;
+  --grey:        #333333;
+  --grey-mid:    #666666;
+  --grey-light:  #999999;
+  --rule:        #e6f0ec;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--teal-bg);
+  color: var(--grey);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 85% 5%, rgba(29,158,117,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 5% 95%, rgba(8,80,65,0.05) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+.wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 44px 20px 80px;
+  position: relative; z-index: 1;
+}
+
+/* ── HEADER ── */
+.brand {
+  text-align: center; margin-bottom: 40px;
+}
+.brand-name {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal-mid);
+}
+
+/* ── INTRO ── */
+.intro { text-align: center; margin-bottom: 0; }
+.intro-kicker {
+  display: inline-block;
+  background: var(--teal-dark); color: var(--teal-border);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+}
+.intro h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 8vw, 62px);
+  font-weight: 700; line-height: 1.05;
+  color: var(--teal-dark); margin-bottom: 16px;
+}
+.intro h1 em { font-style: italic; color: var(--teal-mid); }
+.intro-sub {
+  font-size: 15px; color: var(--grey-mid);
+  line-height: 1.75; max-width: 420px;
+  margin: 0 auto 10px;
+}
+.intro-disclaimer {
+  font-size: 12px; color: var(--grey-light);
+  margin-bottom: 28px; font-style: italic;
+}
+.intro-meta {
+  display: flex; align-items: center; justify-content: center;
+  gap: 18px; flex-wrap: wrap; margin-bottom: 32px;
+}
+.meta-pill {
+  font-size: 12px; font-weight: 500; color: var(--teal-dark);
+  background: var(--teal-light);
+  padding: 5px 12px; border-radius: 20px;
+}
+.btn-start {
+  background: var(--teal-dark); color: var(--white);
+  border: none; border-radius: 12px;
+  padding: 16px 40px; font-size: 15px; font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer; transition: all 0.2s;
+  display: inline-block;
+}
+.btn-start:hover {
+  background: var(--teal-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29,158,117,0.3);
+}
+
+/* ── PROGRESS ── */
+.progress-wrap { margin-bottom: 24px; }
+.progress-track {
+  height: 3px; background: var(--rule);
+  border-radius: 2px; overflow: hidden; margin-bottom: 8px;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal-mid), var(--teal-dark));
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.progress-row {
+  display: flex; justify-content: space-between;
+}
+.progress-label { font-size: 11px; color: var(--grey-light); }
+.progress-pct { font-size: 11px; font-weight: 600; color: var(--teal-mid); }
+
+/* ── CARD ── */
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid rgba(29,158,117,0.1);
+  box-shadow: 0 4px 24px rgba(8,80,65,0.06), 0 1px 4px rgba(8,80,65,0.04);
+  overflow: hidden;
+  animation: fadeUp 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── QUESTION ── */
+.q-top {
+  padding: 12px 24px;
+  background: var(--teal-dark);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal-border);
+  display: flex; align-items: center; gap: 8px;
+}
+.q-num {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--teal-mid);
+  font-size: 9px; font-weight: 700; color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.q-body { padding: 26px 24px 6px; }
+.q-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 600;
+  color: var(--teal-dark); line-height: 1.3;
+  margin-bottom: 6px;
+}
+.q-sub {
+  font-size: 13px; color: var(--grey-light);
+  line-height: 1.6; margin-bottom: 22px;
+}
+
+/* ── OPTIONS ── */
+.options { padding: 0 16px 4px; display: flex; flex-direction: column; gap: 8px; }
+.opt {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 13px 15px;
+  border: 1.5px solid var(--rule);
+  border-radius: 12px; cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  background: var(--white);
+}
+.opt:hover {
+  border-color: var(--teal-border);
+  background: var(--teal-bg);
+  transform: translateX(4px);
+}
+.opt.sel {
+  border-color: var(--teal-mid);
+  background: var(--teal-light);
+}
+.opt-em { font-size: 20px; flex-shrink: 0; line-height: 1; padding-top: 1px; }
+.opt-content { flex: 1; }
+.opt-label { font-size: 14px; font-weight: 500; color: var(--teal-dark); line-height: 1.4; }
+.opt-note { font-size: 11px; color: var(--grey-light); margin-top: 2px; line-height: 1.4; }
+.opt-check {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid var(--teal-border); flex-shrink: 0;
+  margin-top: 2px; transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.opt.sel .opt-check { background: var(--teal-mid); border-color: var(--teal-mid); }
+.opt.sel .opt-check::after {
+  content: ''; width: 6px; height: 6px;
+  background: white; border-radius: 50%;
+}
+
+/* ── NAV ── */
+.q-nav {
+  padding: 18px 24px 22px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--rule); margin-top: 12px;
+}
+.btn-back {
+  font-size: 13px; color: var(--grey-light);
+  background: none; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  transition: color 0.15s;
+}
+.btn-back:hover { color: var(--teal-dark); }
+.btn-next {
+  background: var(--teal-dark); color: var(--white);
+  border: none; border-radius: 10px;
+  padding: 12px 28px; font-size: 14px; font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer; transition: all 0.2s;
+  opacity: 0.3; pointer-events: none;
+}
+.btn-next.on { opacity: 1; pointer-events: all; }
+.btn-next.on:hover {
+  background: var(--teal-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(29,158,117,0.3);
+}
+
+/* ── EMAIL GATE ── */
+.gate { padding: 30px 24px; }
+.gate-kicker {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal-mid); margin-bottom: 10px;
+}
+.gate h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px; font-weight: 600;
+  color: var(--teal-dark); line-height: 1.25; margin-bottom: 8px;
+}
+.gate p { font-size: 14px; color: var(--grey-mid); line-height: 1.7; margin-bottom: 22px; }
+.teaser {
+  background: var(--teal-light); border-radius: 12px;
+  padding: 18px 20px; margin-bottom: 24px;
+  position: relative; overflow: hidden;
+}
+.teaser::after {
+  content: 'unlock to see your path →';
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; color: var(--teal-dark);
+  backdrop-filter: blur(7px);
+  background: rgba(225,245,238,0.75);
+  letter-spacing: 0.03em;
+}
+.teaser-inner { filter: blur(6px); user-select: none; }
+.teaser-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--teal-mid); margin-bottom: 5px;
+}
+.teaser-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px; font-weight: 600; color: var(--teal-dark);
+}
+.teaser-sub { font-size: 12px; color: var(--grey-mid); margin-top: 3px; }
+.field { margin-bottom: 12px; }
+.field label {
+  display: block; font-size: 11px; font-weight: 600;
+  color: var(--teal-dark); margin-bottom: 5px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.field input {
+  width: 100%; padding: 13px 15px;
+  border: 1.5px solid var(--rule); border-radius: 10px;
+  font-size: 14px; font-family: 'DM Sans', sans-serif;
+  color: var(--teal-dark); background: var(--teal-bg);
+  transition: border-color 0.15s, background 0.15s; outline: none;
+}
+.field input:focus { border-color: var(--teal-mid); background: var(--white); }
+.err { font-size: 11px; color: #e53e3e; margin-top: 4px; display: none; }
+.btn-unlock {
+  width: 100%; background: var(--teal-dark); color: var(--white);
+  border: none; border-radius: 12px; padding: 15px;
+  font-size: 15px; font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer; transition: all 0.2s; margin-top: 6px;
+}
+.btn-unlock:hover { background: var(--teal-mid); box-shadow: 0 6px 20px rgba(29,158,117,0.3); }
+.privacy { font-size: 11px; color: var(--grey-light); text-align: center; margin-top: 10px; }
+
+/* ── LOADING ── */
+.loading { padding: 52px 24px; text-align: center; }
+.loading-track { height: 2px; background: var(--rule); border-radius: 1px; overflow: hidden; margin-bottom: 18px; }
+.loading-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal-mid), var(--teal-dark));
+  animation: la 2.2s ease-in-out forwards;
+}
+@keyframes la { from { width: 0 } to { width: 100% } }
+.loading-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-style: italic; color: var(--grey-mid);
+}
+
+/* ── RESULT ── */
+.result { animation: fadeUp 0.4s cubic-bezier(0.4,0,0.2,1); }
+
+.result-hero {
+  background: var(--teal-dark);
+  padding: 30px 26px 26px;
+  position: relative; overflow: hidden;
+}
+.result-hero::before {
+  content: ''; position: absolute;
+  top: -80px; right: -80px;
+  width: 240px; height: 240px; border-radius: 50%;
+  background: rgba(29,158,117,0.12);
+}
+.result-hero::after {
+  content: ''; position: absolute;
+  bottom: -50px; left: -50px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: rgba(159,225,203,0.07);
+}
+.result-kicker {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal-border); margin-bottom: 8px;
+  position: relative; z-index: 1;
+}
+.result-type {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 6vw, 40px); font-weight: 700;
+  color: var(--white); line-height: 1.15; margin-bottom: 8px;
+  position: relative; z-index: 1;
+}
+.result-type em { font-style: italic; color: var(--teal-border); }
+.result-tagline {
+  font-size: 14px; color: var(--teal-border);
+  line-height: 1.7; position: relative; z-index: 1;
+}
+
+.result-body { padding: 26px 24px 6px; }
+.result-honest {
+  font-size: 15px; color: var(--grey);
+  line-height: 1.8; margin-bottom: 22px;
+}
+
+.start-here-box {
+  background: var(--teal-light);
+  border-radius: 12px; padding: 20px 22px;
+  margin-bottom: 22px;
+}
+.start-here-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--teal-mid); margin-bottom: 12px;
+}
+.start-steps { display: flex; flex-direction: column; gap: 10px; }
+.start-step {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.step-num {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--teal-dark); color: var(--white);
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.step-text {
+  font-size: 13px; color: var(--teal-dark); line-height: 1.6;
+}
+.step-text strong { font-weight: 600; }
+
+.result-cta-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--grey-light);
+  margin-bottom: 10px;
+}
+.btn-cta {
+  display: block; width: 100%;
+  background: var(--teal-dark); color: var(--white);
+  text-decoration: none; border-radius: 12px;
+  padding: 15px; text-align: center;
+  font-size: 14px; font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s; margin-bottom: 10px;
+}
+.btn-cta:hover {
+  background: var(--teal-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(29,158,117,0.3);
+}
+.btn-ghost {
+  display: block; width: 100%;
+  background: var(--white); color: var(--teal-dark);
+  text-decoration: none; border-radius: 12px;
+  padding: 13px; text-align: center;
+  font-size: 14px; font-weight: 500;
+  border: 1.5px solid var(--teal-border);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s; margin-bottom: 8px;
+}
+.btn-ghost:hover { border-color: var(--teal-mid); background: var(--teal-light); }
+
+.retake-wrap { padding: 4px 24px 24px; text-align: center; }
+.btn-retake {
+  background: none; border: none; cursor: pointer;
+  font-size: 12px; color: var(--grey-light);
+  font-family: 'DM Sans', sans-serif;
+  text-decoration: underline; text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+.btn-retake:hover { color: var(--teal-dark); }
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center; margin-top: 28px;
+  font-size: 12px; color: var(--grey-light);
+}
+.footer a { color: var(--teal-mid); text-decoration: none; font-weight: 500; }
+
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand"><div class="brand-name">jadejanosi.com</div></div>
+
+  <!-- INTRO -->
+  <div class="intro" id="introScreen">
+    <div class="intro-kicker">quick quiz</div>
+    <h1>Where do you<br><em>actually</em> start?</h1>
+    <p class="intro-sub">Answer 6 honest questions. I'll tell you exactly where you are, what's blocking you, and what to do first — no fluff, no generic advice, no "just believe in yourself."</p>
+    <p class="intro-disclaimer">(It takes 2 minutes. Your coffee won't even go cold.)</p>
+    <div class="intro-meta">
+      <span class="meta-pill">6 questions</span>
+      <span class="meta-pill">2 minutes</span>
+      <span class="meta-pill">brutally honest result</span>
+    </div>
+    <button class="btn-start" onclick="startQuiz()">Let's find out →</button>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap hidden" id="progressWrap">
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-row">
+      <span class="progress-label" id="progressLabel">Question 1 of 6</span>
+      <span class="progress-pct" id="progressPct">0%</span>
+    </div>
+  </div>
+
+  <!-- CARD -->
+  <div class="card hidden" id="mainCard">
+    <div id="qContainer"></div>
+    <div id="gateContainer" class="hidden"></div>
+    <div id="loadingScreen" class="loading hidden">
+      <div class="loading-track"><div class="loading-fill"></div></div>
+      <div class="loading-text" id="loadingText">Reading your answers very carefully...</div>
+    </div>
+    <div id="resultScreen" class="result hidden"></div>
+  </div>
+
+  <div class="footer"><a href="https://jadejanosi.com">jadejanosi.com</a> &nbsp;·&nbsp; <a href="https://jadejanosi.com/offers/">See everything I offer</a></div>
+
+</div>
+<script>
+
+// ── QUESTIONS ──────────────────────────────────────────────────────
+const Qs = [
+  {
+    label: 'The honest one',
+    text: 'Where are you with digital products right now?',
+    sub: 'Pick the one that makes you slightly uncomfortable.',
+    opts: [
+      { em: '🫥', label: "I haven't started. I keep almost starting.", note: 'The idea is there. The action isn\'t.', val: 'zero' },
+      { em: '🔨', label: "I'm building something but it's not live yet.", note: 'In progress, no sales yet.', val: 'building' },
+      { em: '👻', label: "I have a product live. It's mostly haunted by silence.", note: 'Live but not selling.', val: 'live_stuck' },
+      { em: '📈', label: "I'm making sales. I want more of them.", note: 'Working, ready to scale.', val: 'scaling' },
+    ]
+  },
+  {
+    label: 'The real blocker',
+    text: 'What\'s actually stopping you right now?',
+    sub: 'The thing you keep coming back to. Be honest — nobody\'s watching.',
+    opts: [
+      { em: '🤷', label: "I have no idea what to build or sell.", note: 'Analysis paralysis. Too many options, zero action.', val: 'no_idea' },
+      { em: '🦗', label: "Nobody sees my stuff. I'm posting into the void.", note: 'Traffic problem. Discovery is broken.', val: 'no_traffic' },
+      { em: '😶', label: "People find me but don't buy.", note: 'Conversion problem. The funnel leaks.', val: 'no_convert' },
+      { em: '⏰', label: "I literally don't have time to build a business.", note: 'Two kids, a full life, and 47 minutes on a good day.', val: 'no_time' },
+      { em: '🤖', label: "I don't know how to use AI without sounding like a robot.", note: 'The output is generic. It doesn\'t sound like me.', val: 'no_voice' },
+    ]
+  },
+  {
+    label: 'Your setup',
+    text: 'What do you actually have in place right now?',
+    sub: 'Tick the highest one that applies.',
+    opts: [
+      { em: '📱', label: "Just my phone, some ideas, and a Canva account.", note: 'Starting from zero.', val: 'nothing' },
+      { em: '📧', label: "I have an email list (even if it\'s tiny).", note: 'Some kind of list exists.', val: 'email' },
+      { em: '🛍️', label: "I have a product live somewhere people can buy.", note: 'Something exists with a buy button.', val: 'product' },
+      { em: '🚀', label: "I have products, a list, and I\'m running or testing ads.", note: 'The machine exists. Need to optimize it.', val: 'full' },
+    ]
+  },
+  {
+    label: 'The time question',
+    text: 'How much time can you realistically give this per week?',
+    sub: 'Not your ideal scenario. Your actual life.',
+    opts: [
+      { em: '😬', label: "Honestly? Under an hour.", note: 'Nap times, scraps of evening. That\'s it.', val: 'minimal' },
+      { em: '⏱️', label: "1–3 hours if I\'m organized.", note: 'Some dedicated time but not much.', val: 'some' },
+      { em: '💪', label: "3–5 hours. I\'m committed.", note: 'I\'ve made real space for this.', val: 'decent' },
+      { em: '🔥', label: "This is my main focus. I have real time for it.", note: 'Full send.', val: 'lots' },
+    ]
+  },
+  {
+    label: 'The AI question',
+    text: 'How are you using AI in your business right now?',
+    sub: null,
+    opts: [
+      { em: '😶‍🌫️', label: "I\'m not. It stresses me out.", note: 'Avoidance mode.', val: 'none' },
+      { em: '🐣', label: "I use ChatGPT occasionally. Results are meh.", note: 'Basic use, no real system.', val: 'basic' },
+      { em: '😤', label: "I use it but the output sounds nothing like me.", note: 'Generic robot voice. Unusable without heavy editing.', val: 'generic' },
+      { em: '⚡', label: "AI is already part of how I work.", note: 'Solid foundation. Want to go deeper.', val: 'solid' },
+    ]
+  },
+  {
+    label: 'The real one',
+    text: 'What does success actually look like to you?',
+    sub: 'The honest version, not the Instagram version.',
+    opts: [
+      { em: '🥺', label: "One sale. Just proof that this is real.", note: 'First sale validation.', val: 'first' },
+      { em: '💰', label: "$500–$1k/month I can actually count on.", note: 'Predictable, repeatable income.', val: 'consistent' },
+      { em: '🙌', label: "Enough to replace what I was making before.", note: 'Full income replacement.', val: 'replace' },
+      { em: '🏖️', label: "A business that runs when I\'m not in it.", note: 'True passive income. Systems over hustle.', val: 'passive' },
+    ]
+  },
+];
+
+// ── RESULTS ────────────────────────────────────────────────────────
+function getResult(answers) {
+  const [stage, block, setup, time, ai, goal] = answers;
+
+  // ── RESULT PROFILES ──────────────────────────────────────────
+  const profiles = {
+
+    absolute_beginner: {
+      type: 'The Idea Hoarder',
+      tagline: 'You\'ve been "about to start" for a while. That ends today.',
+      honest: 'You have more ideas saved in your Notes app than most people launch in a lifetime. The problem isn\'t information — you\'ve consumed plenty of that. The problem is that you\'re waiting for the right moment, the right idea, or the right version of yourself to show up. None of those are coming. What\'s coming is another six months of almosts.',
+      steps: [
+        { n: 1, text: '<strong>Pick one product idea</strong> — not the best one, not the perfect one. The one you can validate and build in the next 30 days.' },
+        { n: 2, text: '<strong>Validate before you build</strong> — use the free <a href="https://jadejanosi.com/validate-your-digital-product/" style="color:var(--teal-mid);font-weight:600;">product validation guide</a> to confirm someone will actually pay for it.' },
+        { n: 3, text: '<strong>Read the Digital Products Guide</strong> — <a href="https://jadejanosi.com/digital-products-guide/" style="color:var(--teal-mid);font-weight:600;">start here</a> for the full picture on what to build and how.' },
+      ],
+      cta_label: 'The fastest place to start',
+      cta_text: 'Digital Product Blueprint — $37 →',
+      cta_url: 'https://jadejanosi.com/product/digital-product-blueprint/',
+      ghost_text: 'Browse everything →',
+      ghost_url: 'https://jadejanosi.com/offers/',
+    },
+
+    needs_system: {
+      type: 'The Busy Builder',
+      tagline: 'You\'re doing a lot. None of it is connected. That\'s the whole problem.',
+      honest: 'You\'re not lazy. You\'re not bad at this. You\'re running a business in 47-minute windows between everything else, with no system tying it together. So you get random sales when things align and nothing when they don\'t. The income is unpredictable because the process is unpredictable. A system fixes that — not motivation, not more content, not a new product.',
+      steps: [
+        { n: 1, text: '<strong>Audit your current funnel</strong> — use the <a href="https://revenue-gap-calculator.vercel.app/" style="color:var(--teal-mid);font-weight:600;">free Revenue Gap Calculator</a> to find exactly where you\'re leaking money.' },
+        { n: 2, text: '<strong>Connect your content to your email list</strong> — every post should drive people to an opt-in, not to browse. If that\'s not happening, fix it first.' },
+        { n: 3, text: '<strong>Build a repeatable weekly system</strong> — <a href="https://jadejanosi.com/product/moms-ai-revenue-system/" style="color:var(--teal-mid);font-weight:600;">the Revenue System</a> is the operating layer that ties everything together in 47 minutes a week.' },
+      ],
+      cta_label: 'The thing that connects it all',
+      cta_text: "Mom's AI Revenue System — $47 →",
+      cta_url: 'https://jadejanosi.com/product/moms-ai-revenue-system/',
+      ghost_text: 'See all products →',
+      ghost_url: 'https://jadejanosi.com/offers/',
+    },
+
+    traffic_problem: {
+      type: 'The Invisible Expert',
+      tagline: 'You know your stuff. The algorithm just doesn\'t know you exist yet.',
+      honest: 'The content is fine. The product is probably fine. Nobody is seeing it — that\'s the whole problem. Organic reach is painfully slow when you\'re starting out, and "just keep posting" is technically true advice that also might take two years to pay off. You need a smarter content-to-list strategy, and probably some paid traffic to accelerate it.',
+      steps: [
+        { n: 1, text: '<strong>Fix your content-to-list pipeline</strong> — every post needs a lead magnet CTA. If you don\'t have a lead magnet worth opting in for, build one this week.' },
+        { n: 2, text: '<strong>Start using comment triggers</strong> — Manychat auto-DMs convert engagement into subscribers 10x faster than a bio link. Set up at least one keyword trigger.' },
+        { n: 3, text: '<strong>Consider paid traffic</strong> — even $20/day to a lead magnet landing page compounds faster than six months of organic alone. Read the <a href="https://jadejanosi.com/meta-ads-best-practices/" style="color:var(--teal-mid);font-weight:600;">Meta ads guide</a> first.' },
+      ],
+      cta_label: 'The ads playbook for digital products',
+      cta_text: 'Run the Ad: Meta Ads Masterclass — $49 →',
+      cta_url: 'https://jadejanosi.com/product/run-the-ad-meta-ads-masterclass/',
+      ghost_text: 'Browse everything →',
+      ghost_url: 'https://jadejanosi.com/offers/',
+    },
+
+    conversion_problem: {
+      type: 'The Leaky Funnel',
+      tagline: 'Traffic isn\'t the problem. What happens after the click is.',
+      honest: 'People are finding you. They\'re clicking through. They\'re just not buying — and that means something in the path from "I\'m interested" to "here\'s my card" is broken. It\'s almost never the product. It\'s the sales page, the nurture sequence, the trust gap, or the offer framing. The fix is rarely more traffic — it\'s fixing the leak before you open the tap wider.',
+      steps: [
+        { n: 1, text: '<strong>Run the Revenue Gap Calculator</strong> — <a href="https://revenue-gap-calculator.vercel.app/" style="color:var(--teal-mid);font-weight:600;">free tool here</a> — it tells you exactly which gap is costing you the most money per month.' },
+        { n: 2, text: '<strong>Audit your nurture sequence</strong> — are you pitching too early? Are the first 5 emails actually building trust? Read the <a href="https://jadejanosi.com/email-nurture-sequence-digital-products/" style="color:var(--teal-mid);font-weight:600;">nurture sequence guide</a>.' },
+        { n: 3, text: '<strong>Rewrite your sales page hook</strong> — lead with the outcome, not the features. "47 minutes a week" converts. "7 modules" doesn\'t.' },
+      ],
+      cta_label: 'The system that closes the loop',
+      cta_text: "Mom's AI Revenue System — $47 →",
+      cta_url: 'https://jadejanosi.com/product/moms-ai-revenue-system/',
+      ghost_text: 'See all products →',
+      ghost_url: 'https://jadejanosi.com/offers/',
+    },
+
+    ai_voice: {
+      type: 'The Robot Whisperer',
+      tagline: 'AI is supposed to sound like you. Yours sounds like a LinkedIn post from 2019.',
+      honest: 'You\'re not bad at AI — you just haven\'t given it the right input. AI reflects what you feed it. Feed it a vague prompt and you get a vague, generic output. Feed it your brand voice, your audience\'s pain points, and your specific way of saying things — and suddenly it produces content that actually sounds like it came from you. The tool isn\'t broken. The process is.',
+      steps: [
+        { n: 1, text: '<strong>Extract your brand voice first</strong> — paste three pieces of your best content into ChatGPT and ask it to analyze your tone, sentence structure, and vocabulary. Use that as the foundation for every prompt going forward.' },
+        { n: 2, text: '<strong>Stop using generic prompts</strong> — "write me a caption about digital products" is not a prompt. "Write a caption in the tone of the examples above, targeting moms who have products but no consistent income, hook first" is a prompt.' },
+        { n: 3, text: '<strong>Build the voice layer once</strong> — <a href="https://jadejanosi.com/product/the-human-layer/" style="color:var(--teal-mid);font-weight:600;">The Human Layer</a> gives you the framework to do this properly so you never get robot output again.' },
+      ],
+      cta_label: 'Make AI sound like you',
+      cta_text: 'The Human Layer — $24 →',
+      cta_url: 'https://jadejanosi.com/product/the-human-layer/',
+      ghost_text: 'Browse everything →',
+      ghost_url: 'https://jadejanosi.com/offers/',
+    },
+
+    ready_to_scale: {
+      type: 'The Ready One',
+      tagline: 'You\'re not here for motivation. You\'re here to find the next lever.',
+      honest: 'You\'ve done the hard part — you have proof of concept. Sales are happening. Now it\'s about compounding what\'s working: more traffic through paid ads, more revenue per buyer through order bumps and upsells, and more automation so the business runs without you manually holding it up. The next lever is almost always paid traffic or funnel optimization. Sometimes both.',
+      steps: [
+        { n: 1, text: '<strong>Add an order bump and upsell</strong> — if you\'re not capturing extra revenue at checkout and in the 24 hours post-purchase, you\'re leaving the easiest money on the table. Do this before scaling ad spend.' },
+        { n: 2, text: '<strong>Run the Revenue Gap Calculator</strong> — <a href="https://revenue-gap-calculator.vercel.app/" style="color:var(--teal-mid);font-weight:600;">free here</a> — confirms which gap is worth your energy most right now.' },
+        { n: 3, text: '<strong>Build a paid traffic system</strong> — <a href="https://jadejanosi.com/product/run-the-ad-meta-ads-masterclass/" style="color:var(--teal-mid);font-weight:600;">Run the Ad</a> gives you the full Meta ads playbook for digital products, from first creative to profitable scaling.' },
+      ],
+      cta_label: 'Scale what\'s working',
+      cta_text: 'Run the Ad: Meta Ads Masterclass — $49 →',
+      cta_url: 'https://jadejanosi.com/product/run-the-ad-meta-ads-masterclass/',
+      ghost_text: 'See all products →',
+      ghost_url: 'https://jadejanosi.com/offers/',
+    },
+
+  };
+
+  // ── SCORING LOGIC ──────────────────────────────────────────────
+  const s = { absolute_beginner:0, needs_system:0, traffic_problem:0, conversion_problem:0, ai_voice:0, ready_to_scale:0 };
+
+  // Stage
+  if (stage==='zero')       { s.absolute_beginner+=6; }
+  if (stage==='building')   { s.absolute_beginner+=3; s.needs_system+=2; }
+  if (stage==='live_stuck') { s.needs_system+=4; s.conversion_problem+=4; s.traffic_problem+=2; }
+  if (stage==='scaling')    { s.ready_to_scale+=7; s.needs_system+=2; }
+
+  // Block
+  if (block==='no_idea')    { s.absolute_beginner+=6; }
+  if (block==='no_traffic') { s.traffic_problem+=7; }
+  if (block==='no_convert') { s.conversion_problem+=7; }
+  if (block==='no_time')    { s.needs_system+=7; }
+  if (block==='no_voice')   { s.ai_voice+=8; }
+
+  // Setup
+  if (setup==='nothing')  { s.absolute_beginner+=4; }
+  if (setup==='email')    { s.needs_system+=3; s.conversion_problem+=2; }
+  if (setup==='product')  { s.needs_system+=3; s.traffic_problem+=3; s.conversion_problem+=3; }
+  if (setup==='full')     { s.ready_to_scale+=6; }
+
+  // Time
+  if (time==='minimal')   { s.needs_system+=4; }
+  if (time==='lots')      { s.ready_to_scale+=2; s.traffic_problem+=1; }
+
+  // AI
+  if (ai==='none')        { s.absolute_beginner+=2; s.ai_voice+=3; }
+  if (ai==='basic')       { s.ai_voice+=4; }
+  if (ai==='generic')     { s.ai_voice+=7; }
+  if (ai==='solid')       { s.ready_to_scale+=3; s.needs_system+=2; }
+
+  // Goal
+  if (goal==='first')     { s.absolute_beginner+=5; }
+  if (goal==='consistent'){ s.needs_system+=5; s.conversion_problem+=2; }
+  if (goal==='replace')   { s.ready_to_scale+=3; s.needs_system+=3; }
+  if (goal==='passive')   { s.needs_system+=4; s.ready_to_scale+=3; }
+
+  const winner = Object.entries(s).sort((a,b)=>b[1]-a[1])[0][0];
+  return profiles[winner];
+}
+
+// ── LOADING MESSAGES ──────────────────────────────────────────────
+const loadingLines = [
+  'Reading your answers very carefully...',
+  'Cross-referencing with 8 years of marketing experience...',
+  'Ignoring the voice that says "just tell them to hustle more"...',
+  'Almost there...',
+];
+
+// ── STATE ─────────────────────────────────────────────────────────
+let cur = 0;
+let answers = new Array(Qs.length).fill(undefined);
+
+function startQuiz() {
+  document.getElementById('introScreen').classList.add('hidden');
+  document.getElementById('progressWrap').classList.remove('hidden');
+  document.getElementById('mainCard').classList.remove('hidden');
+  renderQ();
+}
+
+function renderQ() {
+  const q = Qs[cur];
+  const pct = Math.round((cur / Qs.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `Question ${cur + 1} of ${Qs.length}`;
+  document.getElementById('progressPct').textContent = pct + '%';
+
+  ['gateContainer','loadingScreen','resultScreen'].forEach(id =>
+    document.getElementById(id).classList.add('hidden'));
+
+  document.getElementById('qContainer').innerHTML = `
+    <div class="q-top">
+      <div class="q-num">${cur + 1}</div>
+      ${q.label}
+    </div>
+    <div class="q-body">
+      <div class="q-text">${q.text}</div>
+      ${q.sub ? `<div class="q-sub">${q.sub}</div>` : '<div style="margin-bottom:18px"></div>'}
+    </div>
+    <div class="options">
+      ${q.opts.map((o,i) => `
+        <div class="opt ${answers[cur] === i ? 'sel' : ''}" onclick="pick(${i})">
+          <div class="opt-em">${o.em}</div>
+          <div class="opt-content">
+            <div class="opt-label">${o.label}</div>
+            ${o.note ? `<div class="opt-note">${o.note}</div>` : ''}
+          </div>
+          <div class="opt-check"></div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="goBack()" ${cur===0?'style="opacity:0;pointer-events:none"':''}>← Back</button>
+      <button class="btn-next ${answers[cur]!==undefined?'on':''}" id="nxtBtn" onclick="goNext()">
+        ${cur===Qs.length-1 ? 'Show me my result →' : 'Next →'}
+      </button>
+    </div>
+  `;
+}
+
+function pick(i) {
+  answers[cur] = i;
+  document.querySelectorAll('.opt').forEach((el,idx) => el.classList.toggle('sel', idx===i));
+  document.getElementById('nxtBtn').classList.add('on');
+}
+
+function goNext() {
+  if (answers[cur]===undefined) return;
+  if (cur < Qs.length-1) { cur++; renderQ(); }
+  else showGate();
+}
+
+function goBack() {
+  if (cur>0) { cur--; renderQ(); }
+}
+
+// ── GATE ──────────────────────────────────────────────────────────
+function showGate() {
+  document.getElementById('qContainer').innerHTML = '';
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressLabel').textContent = 'Almost done';
+  document.getElementById('progressPct').textContent = '100%';
+
+  const vals = answers.map((a,i) => Qs[i].opts[a]?.val);
+  const res = getResult(vals);
+
+  document.getElementById('gateContainer').innerHTML = `
+    <div class="gate">
+      <div class="gate-kicker">Your result is ready</div>
+      <h2>One last thing before I show you where to start.</h2>
+      <p>Drop your email and I'll send your result straight to your inbox — plus the occasional thing worth actually reading.</p>
+      <div class="teaser">
+        <div class="teaser-inner">
+          <div class="teaser-label">You are</div>
+          <div class="teaser-title">${res.type}</div>
+          <div class="teaser-sub">${res.tagline}</div>
+        </div>
+      </div>
+      <div class="field">
+        <label>First name</label>
+        <input type="text" id="fName" placeholder="Your name" autocomplete="given-name">
+      </div>
+      <div class="field">
+        <label>Email address</label>
+        <input type="email" id="eInput" placeholder="your@email.com" autocomplete="email">
+        <div class="err" id="eErr">That doesn't look like a valid email.</div>
+      </div>
+      <button class="btn-unlock" onclick="submitGate()">Show me my result →</button>
+      <p class="privacy">No spam. Unsubscribe any time. I'm not that person.</p>
+    </div>
+  `;
+  document.getElementById('gateContainer').classList.remove('hidden');
+}
+
+async function submitGate() {
+  const email = document.getElementById('eInput').value.trim();
+  const name  = document.getElementById('fName').value.trim();
+  const err   = document.getElementById('eErr');
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    err.style.display='block'; return;
+  }
+  err.style.display='none';
+
+  try {
+    await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, firstName: name, source: 'Start Here Quiz' })
+    });
+  } catch(e) { console.log(e); }
+
+  document.getElementById('gateContainer').classList.add('hidden');
+  document.getElementById('loadingScreen').classList.remove('hidden');
+
+  let li = 0;
+  const lt = document.getElementById('loadingText');
+  const intv = setInterval(() => {
+    li++;
+    if (li < loadingLines.length) lt.textContent = loadingLines[li];
+  }, 550);
+
+  setTimeout(() => {
+    clearInterval(intv);
+    document.getElementById('loadingScreen').classList.add('hidden');
+    showResult();
+  }, 2400);
+}
+
+// ── RESULT ────────────────────────────────────────────────────────
+function showResult() {
+  const vals = answers.map((a,i) => Qs[i].opts[a]?.val);
+  const res  = getResult(vals);
+
+  document.getElementById('resultScreen').innerHTML = `
+    <div class="result-hero">
+      <div class="result-kicker">You are</div>
+      <div class="result-type">${res.type}</div>
+      <div class="result-tagline">${res.tagline}</div>
+    </div>
+    <div class="result-body">
+      <p class="result-honest">${res.honest}</p>
+      <div class="start-here-box">
+        <div class="start-here-label">Where to start — in order</div>
+        <div class="start-steps">
+          ${res.steps.map(s=>`
+            <div class="start-step">
+              <div class="step-num">${s.n}</div>
+              <div class="step-text">${s.text}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="result-cta-label">${res.cta_label}</div>
+      <a href="${res.cta_url}" target="_blank" class="btn-cta">${res.cta_text}</a>
+      <a href="${res.ghost_url}" target="_blank" class="btn-ghost">${res.ghost_text}</a>
+    </div>
+    <div class="retake-wrap">
+      <button class="btn-retake" onclick="retake()">Retake the quiz</button>
+    </div>
+  `;
+  document.getElementById('resultScreen').classList.remove('hidden');
+  document.getElementById('progressWrap').classList.add('hidden');
+}
+
+function retake() {
+  cur = 0; answers = new Array(Qs.length).fill(undefined);
+  document.getElementById('progressWrap').classList.remove('hidden');
+  document.getElementById('resultScreen').classList.add('hidden');
+  document.getElementById('qContainer').innerHTML = '';
+  renderQ();
+}
+</script>
+</body>
+</html>
