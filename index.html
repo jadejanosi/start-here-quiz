@@ -3,26 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Where Should You Start? — Jade Janosi</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<title>Where Should You Start? | Jade Janosi</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --teal-dark:   #085041;
-  --teal-mid:    #1D9E75;
-  --teal-light:  #E1F5EE;
-  --teal-border: #9FE1CB;
-  --teal-bg:     #F4FBFA;
-  --white:       #ffffff;
-  --grey:        #333333;
-  --grey-mid:    #666666;
-  --grey-light:  #999999;
-  --rule:        #e6f0ec;
+  --violet:      #6D28D9;
+  --pink:        #DB2777;
+  --cyan:        #0E7C86;
+  --coral:       #E2562D;
+  --ink:         #1B1533;
+  --ink-deep:    #14113A;
+  --muted:       #4B4570;
+  --muted-light: #8A83A8;
+  --lav:         #F5F3FF;
+  --lav-2:       #EDE9FE;
+  --white:       #FFFFFF;
+  --border:      rgba(109,40,217,0.16);
+  --rule:        rgba(109,40,217,0.10);
+  --rainbow:     linear-gradient(100deg,#E2562D 0%,#DB2777 35%,#0E7C86 70%,#6D28D9 100%);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--teal-bg);
-  color: var(--grey);
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  background: linear-gradient(135deg,#FFFFFF 0%,#F5F3FF 60%,#EDE9FE 100%);
+  color: var(--ink);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
@@ -30,98 +34,95 @@ body::before {
   content: '';
   position: fixed; inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 85% 5%, rgba(29,158,117,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 60% at 5% 95%, rgba(8,80,65,0.05) 0%, transparent 60%);
+    radial-gradient(circle 420px at 92% 4%, rgba(219,39,119,0.07) 0%, transparent 70%),
+    radial-gradient(circle 380px at 4% 96%, rgba(109,40,217,0.07) 0%, transparent 70%);
   pointer-events: none; z-index: 0;
 }
 .wrap {
-  max-width: 600px;
+  max-width: 620px;
   margin: 0 auto;
   padding: 44px 20px 80px;
   position: relative; z-index: 1;
 }
 
-/* ── HEADER ── */
-.brand {
-  text-align: center; margin-bottom: 40px;
-}
+/* HEADER */
+.brand { text-align: center; margin-bottom: 36px; }
 .brand-name {
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--teal-mid);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--violet);
 }
 
-/* ── INTRO ── */
-.intro { text-align: center; margin-bottom: 0; }
+/* INTRO */
+.intro { text-align: center; }
 .intro-kicker {
   display: inline-block;
-  background: var(--teal-dark); color: var(--teal-border);
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+  background: var(--rainbow); color: var(--white);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 7px 18px; border-radius: 40px; margin-bottom: 20px;
 }
 .intro h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 8vw, 62px);
-  font-weight: 700; line-height: 1.05;
-  color: var(--teal-dark); margin-bottom: 16px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(34px, 7.5vw, 56px);
+  font-weight: 900; line-height: 1.06; letter-spacing: -0.02em;
+  background: var(--rainbow);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  margin-bottom: 18px;
 }
-.intro h1 em { font-style: italic; color: var(--teal-mid); }
 .intro-sub {
-  font-size: 15px; color: var(--grey-mid);
-  line-height: 1.75; max-width: 420px;
+  font-size: 16px; color: var(--muted);
+  line-height: 1.75; max-width: 460px;
   margin: 0 auto 10px;
 }
 .intro-disclaimer {
-  font-size: 12px; color: var(--grey-light);
+  font-size: 13px; color: var(--muted-light);
   margin-bottom: 28px; font-style: italic;
 }
 .intro-meta {
   display: flex; align-items: center; justify-content: center;
-  gap: 18px; flex-wrap: wrap; margin-bottom: 32px;
+  gap: 10px; flex-wrap: wrap; margin-bottom: 32px;
 }
 .meta-pill {
-  font-size: 12px; font-weight: 500; color: var(--teal-dark);
-  background: var(--teal-light);
-  padding: 5px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: var(--violet);
+  background: var(--white); border: 1px solid var(--border);
+  padding: 7px 14px; border-radius: 999px;
 }
 .btn-start {
-  background: var(--teal-dark); color: var(--white);
-  border: none; border-radius: 12px;
-  padding: 16px 40px; font-size: 15px; font-weight: 600;
-  font-family: 'DM Sans', sans-serif;
-  cursor: pointer; transition: all 0.2s;
+  background: var(--rainbow); color: var(--white);
+  border: none; border-radius: 10px;
+  padding: 17px 42px; font-size: 16px; font-weight: 800;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 22px rgba(219,39,119,0.25);
   display: inline-block;
 }
-.btn-start:hover {
-  background: var(--teal-mid);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(29,158,117,0.3);
-}
+.btn-start:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(219,39,119,0.32); }
 
-/* ── PROGRESS ── */
+/* PROGRESS */
 .progress-wrap { margin-bottom: 24px; }
 .progress-track {
-  height: 3px; background: var(--rule);
+  height: 4px; background: var(--lav-2);
   border-radius: 2px; overflow: hidden; margin-bottom: 8px;
 }
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--teal-mid), var(--teal-dark));
+  background: var(--rainbow);
   transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
 }
-.progress-row {
-  display: flex; justify-content: space-between;
-}
-.progress-label { font-size: 11px; color: var(--grey-light); }
-.progress-pct { font-size: 11px; font-weight: 600; color: var(--teal-mid); }
+.progress-row { display: flex; justify-content: space-between; }
+.progress-label { font-size: 12px; color: var(--muted-light); }
+.progress-pct { font-size: 12px; font-weight: 700; color: var(--violet); }
 
-/* ── CARD ── */
+/* CARD */
 .card {
   background: var(--white);
   border-radius: 20px;
-  border: 1px solid rgba(29,158,117,0.1);
-  box-shadow: 0 4px 24px rgba(8,80,65,0.06), 0 1px 4px rgba(8,80,65,0.04);
+  border: 1.5px solid var(--border);
+  box-shadow: 0 4px 26px rgba(109,40,217,0.08), 0 1px 4px rgba(109,40,217,0.04);
   overflow: hidden;
   animation: fadeUp 0.3s cubic-bezier(0.4,0,0.2,1);
 }
@@ -130,289 +131,280 @@ body::before {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── QUESTION ── */
+/* QUESTION */
 .q-top {
-  padding: 12px 24px;
-  background: var(--teal-dark);
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--teal-border);
-  display: flex; align-items: center; gap: 8px;
+  padding: 13px 24px;
+  background: var(--lav);
+  border-bottom: 1px solid var(--rule);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--violet);
+  display: flex; align-items: center; gap: 10px;
 }
 .q-num {
-  width: 18px; height: 18px; border-radius: 50%;
-  background: var(--teal-mid);
-  font-size: 9px; font-weight: 700; color: var(--white);
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--rainbow);
+  font-size: 10px; font-weight: 800; color: var(--white);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
 .q-body { padding: 26px 24px 6px; }
 .q-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px; font-weight: 600;
-  color: var(--teal-dark); line-height: 1.3;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 23px; font-weight: 800;
+  color: var(--ink); line-height: 1.3;
   margin-bottom: 6px;
 }
 .q-sub {
-  font-size: 13px; color: var(--grey-light);
+  font-size: 14px; color: var(--muted-light);
   line-height: 1.6; margin-bottom: 22px;
 }
 
-/* ── OPTIONS ── */
-.options { padding: 0 16px 4px; display: flex; flex-direction: column; gap: 8px; }
+/* OPTIONS */
+.options { padding: 0 16px 4px; display: flex; flex-direction: column; gap: 9px; }
 .opt {
   display: flex; align-items: flex-start; gap: 12px;
-  padding: 13px 15px;
-  border: 1.5px solid var(--rule);
+  padding: 14px 15px;
+  border: 1.5px solid var(--lav-2);
   border-radius: 12px; cursor: pointer;
   transition: border-color 0.15s, background 0.15s, transform 0.15s;
   background: var(--white);
 }
 .opt:hover {
-  border-color: var(--teal-border);
-  background: var(--teal-bg);
+  border-color: rgba(219,39,119,0.35);
+  background: var(--lav);
   transform: translateX(4px);
 }
 .opt.sel {
-  border-color: var(--teal-mid);
-  background: var(--teal-light);
+  border-color: var(--pink);
+  background: #FDF2F8;
 }
 .opt-em { font-size: 20px; flex-shrink: 0; line-height: 1; padding-top: 1px; }
 .opt-content { flex: 1; }
-.opt-label { font-size: 14px; font-weight: 500; color: var(--teal-dark); line-height: 1.4; }
-.opt-note { font-size: 11px; color: var(--grey-light); margin-top: 2px; line-height: 1.4; }
+.opt-label { font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.4; }
+.opt-note { font-size: 12.5px; color: var(--muted-light); margin-top: 3px; line-height: 1.45; }
 .opt-check {
-  width: 18px; height: 18px; border-radius: 50%;
-  border: 2px solid var(--teal-border); flex-shrink: 0;
-  margin-top: 2px; transition: all 0.15s;
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid var(--lav-2); flex-shrink: 0;
+  margin-top: 1px; transition: all 0.15s;
   display: flex; align-items: center; justify-content: center;
 }
-.opt.sel .opt-check { background: var(--teal-mid); border-color: var(--teal-mid); }
+.opt.sel .opt-check { background: var(--pink); border-color: var(--pink); }
 .opt.sel .opt-check::after {
-  content: ''; width: 6px; height: 6px;
+  content: ''; width: 7px; height: 7px;
   background: white; border-radius: 50%;
 }
 
-/* ── NAV ── */
+/* NAV */
 .q-nav {
   padding: 18px 24px 22px;
   display: flex; justify-content: space-between; align-items: center;
-  border-top: 1px solid var(--rule); margin-top: 12px;
+  border-top: 1px solid var(--rule); margin-top: 14px;
 }
 .btn-back {
-  font-size: 13px; color: var(--grey-light);
+  font-size: 14px; color: var(--muted-light);
   background: none; border: none; cursor: pointer;
-  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  font-family: 'Nunito Sans', sans-serif; font-weight: 700;
   transition: color 0.15s;
 }
-.btn-back:hover { color: var(--teal-dark); }
+.btn-back:hover { color: var(--violet); }
 .btn-next {
-  background: var(--teal-dark); color: var(--white);
+  background: var(--rainbow); color: var(--white);
   border: none; border-radius: 10px;
-  padding: 12px 28px; font-size: 14px; font-weight: 600;
-  font-family: 'DM Sans', sans-serif;
+  padding: 13px 28px; font-size: 15px; font-weight: 800;
+  font-family: 'Be Vietnam Pro', sans-serif;
   cursor: pointer; transition: all 0.2s;
   opacity: 0.3; pointer-events: none;
 }
 .btn-next.on { opacity: 1; pointer-events: all; }
-.btn-next.on:hover {
-  background: var(--teal-mid);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(29,158,117,0.3);
-}
+.btn-next.on:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(219,39,119,0.28); }
 
-/* ── EMAIL GATE ── */
+/* EMAIL GATE */
 .gate { padding: 30px 24px; }
 .gate-kicker {
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--teal-mid); margin-bottom: 10px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 10px;
 }
 .gate h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 27px; font-weight: 600;
-  color: var(--teal-dark); line-height: 1.25; margin-bottom: 8px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 25px; font-weight: 800;
+  color: var(--ink); line-height: 1.25; margin-bottom: 10px;
 }
-.gate p { font-size: 14px; color: var(--grey-mid); line-height: 1.7; margin-bottom: 22px; }
+.gate p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 22px; }
 .teaser {
-  background: var(--teal-light); border-radius: 12px;
+  background: var(--lav); border: 1px solid var(--rule); border-radius: 12px;
   padding: 18px 20px; margin-bottom: 24px;
   position: relative; overflow: hidden;
 }
 .teaser::after {
-  content: 'unlock to see your path →';
+  content: 'unlock to see your path \2192';
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 600; color: var(--teal-dark);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 14px; font-weight: 800; color: var(--violet);
   backdrop-filter: blur(7px);
-  background: rgba(225,245,238,0.75);
-  letter-spacing: 0.03em;
+  background: rgba(245,243,255,0.78);
+  letter-spacing: 0.02em;
 }
 .teaser-inner { filter: blur(6px); user-select: none; }
 .teaser-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--teal-mid); margin-bottom: 5px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--pink); margin-bottom: 5px;
 }
 .teaser-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px; font-weight: 600; color: var(--teal-dark);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 21px; font-weight: 800; color: var(--ink);
 }
-.teaser-sub { font-size: 12px; color: var(--grey-mid); margin-top: 3px; }
+.teaser-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
 .field { margin-bottom: 12px; }
 .field label {
-  display: block; font-size: 11px; font-weight: 600;
-  color: var(--teal-dark); margin-bottom: 5px;
-  letter-spacing: 0.04em; text-transform: uppercase;
+  display: block; font-size: 11px; font-weight: 800;
+  color: var(--violet); margin-bottom: 6px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: 'Be Vietnam Pro', sans-serif;
 }
 .field input {
-  width: 100%; padding: 13px 15px;
-  border: 1.5px solid var(--rule); border-radius: 10px;
-  font-size: 14px; font-family: 'DM Sans', sans-serif;
-  color: var(--teal-dark); background: var(--teal-bg);
+  width: 100%; padding: 14px 15px;
+  border: 1.5px solid var(--lav-2); border-radius: 10px;
+  font-size: 15px; font-family: 'Nunito Sans', sans-serif;
+  color: var(--ink); background: var(--lav);
   transition: border-color 0.15s, background 0.15s; outline: none;
 }
-.field input:focus { border-color: var(--teal-mid); background: var(--white); }
-.err { font-size: 11px; color: #e53e3e; margin-top: 4px; display: none; }
+.field input:focus { border-color: var(--pink); background: var(--white); }
+.err { font-size: 12px; color: var(--coral); margin-top: 5px; display: none; font-weight: 700; }
 .btn-unlock {
-  width: 100%; background: var(--teal-dark); color: var(--white);
-  border: none; border-radius: 12px; padding: 15px;
-  font-size: 15px; font-weight: 600;
-  font-family: 'DM Sans', sans-serif;
+  width: 100%; background: var(--rainbow); color: var(--white);
+  border: none; border-radius: 10px; padding: 16px;
+  font-size: 16px; font-weight: 800;
+  font-family: 'Be Vietnam Pro', sans-serif;
   cursor: pointer; transition: all 0.2s; margin-top: 6px;
+  box-shadow: 0 4px 20px rgba(219,39,119,0.22);
 }
-.btn-unlock:hover { background: var(--teal-mid); box-shadow: 0 6px 20px rgba(29,158,117,0.3); }
-.privacy { font-size: 11px; color: var(--grey-light); text-align: center; margin-top: 10px; }
+.btn-unlock:hover { transform: translateY(-1px); box-shadow: 0 8px 26px rgba(219,39,119,0.3); }
+.privacy { font-size: 12px; color: var(--muted-light); text-align: center; margin-top: 12px; }
 
-/* ── LOADING ── */
-.loading { padding: 52px 24px; text-align: center; }
-.loading-track { height: 2px; background: var(--rule); border-radius: 1px; overflow: hidden; margin-bottom: 18px; }
+/* LOADING */
+.loading { padding: 54px 24px; text-align: center; }
+.loading-track { height: 3px; background: var(--lav-2); border-radius: 2px; overflow: hidden; margin-bottom: 20px; }
 .loading-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--teal-mid), var(--teal-dark));
+  background: var(--rainbow);
   animation: la 2.2s ease-in-out forwards;
 }
 @keyframes la { from { width: 0 } to { width: 100% } }
 .loading-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px; font-style: italic; color: var(--grey-mid);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 17px; font-style: italic; color: var(--muted);
 }
 
-/* ── RESULT ── */
+/* RESULT */
 .result { animation: fadeUp 0.4s cubic-bezier(0.4,0,0.2,1); }
-
 .result-hero {
-  background: var(--teal-dark);
-  padding: 30px 26px 26px;
+  background: linear-gradient(135deg,#14113A 0%,#2D1B6B 100%);
+  padding: 32px 26px 28px;
   position: relative; overflow: hidden;
 }
 .result-hero::before {
   content: ''; position: absolute;
   top: -80px; right: -80px;
   width: 240px; height: 240px; border-radius: 50%;
-  background: rgba(29,158,117,0.12);
+  background: rgba(219,39,119,0.18);
 }
 .result-hero::after {
   content: ''; position: absolute;
-  bottom: -50px; left: -50px;
-  width: 180px; height: 180px; border-radius: 50%;
-  background: rgba(159,225,203,0.07);
+  bottom: -60px; left: -60px;
+  width: 190px; height: 190px; border-radius: 50%;
+  background: rgba(14,124,134,0.16);
 }
 .result-kicker {
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--teal-border); margin-bottom: 8px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #F9A8D4; margin-bottom: 8px;
   position: relative; z-index: 1;
 }
 .result-type {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 6vw, 40px); font-weight: 700;
-  color: var(--white); line-height: 1.15; margin-bottom: 8px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(28px, 6vw, 38px); font-weight: 900;
+  color: var(--white); line-height: 1.15; margin-bottom: 10px;
   position: relative; z-index: 1;
 }
-.result-type em { font-style: italic; color: var(--teal-border); }
 .result-tagline {
-  font-size: 14px; color: var(--teal-border);
+  font-size: 15px; color: rgba(255,255,255,0.78);
   line-height: 1.7; position: relative; z-index: 1;
 }
-
 .result-body { padding: 26px 24px 6px; }
 .result-honest {
-  font-size: 15px; color: var(--grey);
+  font-size: 16px; color: var(--ink);
   line-height: 1.8; margin-bottom: 22px;
 }
-
 .start-here-box {
-  background: var(--teal-light);
+  background: var(--lav); border: 1px solid var(--rule);
   border-radius: 12px; padding: 20px 22px;
   margin-bottom: 22px;
 }
 .start-here-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--teal-mid); margin-bottom: 12px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--violet); margin-bottom: 14px;
 }
-.start-steps { display: flex; flex-direction: column; gap: 10px; }
-.start-step {
-  display: flex; align-items: flex-start; gap: 12px;
-}
+.start-steps { display: flex; flex-direction: column; gap: 12px; }
+.start-step { display: flex; align-items: flex-start; gap: 12px; }
 .step-num {
-  width: 22px; height: 22px; border-radius: 50%;
-  background: var(--teal-dark); color: var(--white);
-  font-size: 10px; font-weight: 700;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--rainbow); color: var(--white);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px; font-weight: 800;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 1px;
 }
-.step-text {
-  font-size: 13px; color: var(--teal-dark); line-height: 1.6;
-}
-.step-text strong { font-weight: 600; }
-
+.step-text { font-size: 14.5px; color: var(--ink); line-height: 1.65; }
+.step-text strong { font-weight: 800; }
+.step-text a { color: var(--violet); font-weight: 700; }
 .result-cta-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--grey-light);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--cyan);
   margin-bottom: 10px;
 }
 .btn-cta {
   display: block; width: 100%;
-  background: var(--teal-dark); color: var(--white);
-  text-decoration: none; border-radius: 12px;
-  padding: 15px; text-align: center;
-  font-size: 14px; font-weight: 600;
-  font-family: 'DM Sans', sans-serif;
+  background: var(--rainbow); color: var(--white);
+  text-decoration: none; border-radius: 10px;
+  padding: 16px; text-align: center;
+  font-size: 15px; font-weight: 800;
+  font-family: 'Be Vietnam Pro', sans-serif;
   transition: all 0.2s; margin-bottom: 10px;
+  box-shadow: 0 4px 20px rgba(219,39,119,0.22);
 }
-.btn-cta:hover {
-  background: var(--teal-mid);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(29,158,117,0.3);
-}
+.btn-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 26px rgba(219,39,119,0.3); }
 .btn-ghost {
   display: block; width: 100%;
-  background: var(--white); color: var(--teal-dark);
-  text-decoration: none; border-radius: 12px;
-  padding: 13px; text-align: center;
-  font-size: 14px; font-weight: 500;
-  border: 1.5px solid var(--teal-border);
-  font-family: 'DM Sans', sans-serif;
+  background: var(--white); color: var(--violet);
+  text-decoration: none; border-radius: 10px;
+  padding: 14px; text-align: center;
+  font-size: 15px; font-weight: 800;
+  border: 1.5px solid var(--border);
+  font-family: 'Be Vietnam Pro', sans-serif;
   transition: all 0.2s; margin-bottom: 8px;
 }
-.btn-ghost:hover { border-color: var(--teal-mid); background: var(--teal-light); }
-
-.retake-wrap { padding: 4px 24px 24px; text-align: center; }
+.btn-ghost:hover { border-color: var(--violet); background: var(--lav); }
+.retake-wrap { padding: 6px 24px 26px; text-align: center; }
 .btn-retake {
   background: none; border: none; cursor: pointer;
-  font-size: 12px; color: var(--grey-light);
-  font-family: 'DM Sans', sans-serif;
+  font-size: 13px; color: var(--muted-light);
+  font-family: 'Nunito Sans', sans-serif; font-weight: 700;
   text-decoration: underline; text-underline-offset: 3px;
   transition: color 0.15s;
 }
-.btn-retake:hover { color: var(--teal-dark); }
+.btn-retake:hover { color: var(--violet); }
 
-/* ── FOOTER ── */
-.footer {
-  text-align: center; margin-top: 28px;
-  font-size: 12px; color: var(--grey-light);
-}
-.footer a { color: var(--teal-mid); text-decoration: none; font-weight: 500; }
+/* FOOTER */
+.footer { text-align: center; margin-top: 28px; font-size: 13px; color: var(--muted-light); }
+.footer a { color: var(--violet); text-decoration: none; font-weight: 700; }
 
 .hidden { display: none !important; }
 </style>
@@ -424,16 +416,16 @@ body::before {
 
   <!-- INTRO -->
   <div class="intro" id="introScreen">
-    <div class="intro-kicker">quick quiz</div>
-    <h1>Where do you<br><em>actually</em> start?</h1>
-    <p class="intro-sub">Answer 6 honest questions. I'll tell you exactly where you are, what's blocking you, and what to do first — no fluff, no generic advice, no "just believe in yourself."</p>
+    <div class="intro-kicker">2-minute quiz</div>
+    <h1>Where do you actually start?</h1>
+    <p class="intro-sub">Answer 6 honest questions. I'll tell you exactly where you are, what's blocking you, and what to do first. No BS, no generic advice, no "just believe in yourself."</p>
     <p class="intro-disclaimer">(It takes 2 minutes. Your coffee won't even go cold.)</p>
     <div class="intro-meta">
       <span class="meta-pill">6 questions</span>
       <span class="meta-pill">2 minutes</span>
       <span class="meta-pill">brutally honest result</span>
     </div>
-    <button class="btn-start" onclick="startQuiz()">Let's find out →</button>
+    <button class="btn-start" onclick="startQuiz()">Let's find out &rarr;</button>
   </div>
 
   <!-- PROGRESS -->
@@ -456,19 +448,19 @@ body::before {
     <div id="resultScreen" class="result hidden"></div>
   </div>
 
-  <div class="footer"><a href="https://jadejanosi.com">jadejanosi.com</a> &nbsp;·&nbsp; <a href="https://jadejanosi.com/offers/">See everything I offer</a></div>
+  <div class="footer"><a href="https://jadejanosi.com">jadejanosi.com</a> &nbsp;&middot;&nbsp; <a href="https://jadejanosi.com/offers/">See everything I offer</a></div>
 
 </div>
 <script>
 
-// ── QUESTIONS ──────────────────────────────────────────────────────
+// QUESTIONS
 const Qs = [
   {
     label: 'The honest one',
     text: 'Where are you with digital products right now?',
     sub: 'Pick the one that makes you slightly uncomfortable.',
     opts: [
-      { em: '🫥', label: "I haven't started. I keep almost starting.", note: 'The idea is there. The action isn\'t.', val: 'zero' },
+      { em: '🫥', label: "I haven't started. I keep almost starting.", note: "The idea is there. The action isn't.", val: 'zero' },
       { em: '🔨', label: "I'm building something but it's not live yet.", note: 'In progress, no sales yet.', val: 'building' },
       { em: '👻', label: "I have a product live. It's mostly haunted by silence.", note: 'Live but not selling.', val: 'live_stuck' },
       { em: '📈', label: "I'm making sales. I want more of them.", note: 'Working, ready to scale.', val: 'scaling' },
@@ -476,25 +468,25 @@ const Qs = [
   },
   {
     label: 'The real blocker',
-    text: 'What\'s actually stopping you right now?',
-    sub: 'The thing you keep coming back to. Be honest — nobody\'s watching.',
+    text: "What's actually stopping you right now?",
+    sub: "The thing you keep coming back to. Be honest. Nobody's watching.",
     opts: [
       { em: '🤷', label: "I have no idea what to build or sell.", note: 'Analysis paralysis. Too many options, zero action.', val: 'no_idea' },
       { em: '🦗', label: "Nobody sees my stuff. I'm posting into the void.", note: 'Traffic problem. Discovery is broken.', val: 'no_traffic' },
       { em: '😶', label: "People find me but don't buy.", note: 'Conversion problem. The funnel leaks.', val: 'no_convert' },
-      { em: '⏰', label: "I literally don't have time to build a business.", note: 'Two kids, a full life, and 47 minutes on a good day.', val: 'no_time' },
-      { em: '🤖', label: "I don't know how to use AI without sounding like a robot.", note: 'The output is generic. It doesn\'t sound like me.', val: 'no_voice' },
+      { em: '⏰', label: "I literally don't have time to build a business.", note: 'A full life and 47 minutes on a good day.', val: 'no_time' },
+      { em: '🤖', label: "I don't know how to use AI without sounding like a robot.", note: "The output is generic. It doesn't sound like me.", val: 'no_voice' },
     ]
   },
   {
     label: 'Your setup',
     text: 'What do you actually have in place right now?',
-    sub: 'Tick the highest one that applies.',
+    sub: 'Pick the highest one that applies.',
     opts: [
       { em: '📱', label: "Just my phone, some ideas, and a Canva account.", note: 'Starting from zero.', val: 'nothing' },
-      { em: '📧', label: "I have an email list (even if it\'s tiny).", note: 'Some kind of list exists.', val: 'email' },
+      { em: '📧', label: "I have an email list (even if it's tiny).", note: 'Some kind of list exists.', val: 'email' },
       { em: '🛍️', label: "I have a product live somewhere people can buy.", note: 'Something exists with a buy button.', val: 'product' },
-      { em: '🚀', label: "I have products, a list, and I\'m running or testing ads.", note: 'The machine exists. Need to optimize it.', val: 'full' },
+      { em: '🚀', label: "I have products, a list, and I'm running or testing ads.", note: 'The machine exists. Need to optimize it.', val: 'full' },
     ]
   },
   {
@@ -502,9 +494,9 @@ const Qs = [
     text: 'How much time can you realistically give this per week?',
     sub: 'Not your ideal scenario. Your actual life.',
     opts: [
-      { em: '😬', label: "Honestly? Under an hour.", note: 'Nap times, scraps of evening. That\'s it.', val: 'minimal' },
-      { em: '⏱️', label: "1–3 hours if I\'m organized.", note: 'Some dedicated time but not much.', val: 'some' },
-      { em: '💪', label: "3–5 hours. I\'m committed.", note: 'I\'ve made real space for this.', val: 'decent' },
+      { em: '😬', label: "Honestly? Under an hour.", note: "Nap times, scraps of evening. That's it.", val: 'minimal' },
+      { em: '⏱️', label: "1 to 3 hours if I'm organized.", note: 'Some dedicated time but not much.', val: 'some' },
+      { em: '💪', label: "3 to 5 hours. I'm committed.", note: "I've made real space for this.", val: 'decent' },
       { em: '🔥', label: "This is my main focus. I have real time for it.", note: 'Full send.', val: 'lots' },
     ]
   },
@@ -513,7 +505,7 @@ const Qs = [
     text: 'How are you using AI in your business right now?',
     sub: null,
     opts: [
-      { em: '😶‍🌫️', label: "I\'m not. It stresses me out.", note: 'Avoidance mode.', val: 'none' },
+      { em: '😶‍🌫️', label: "I'm not. It stresses me out.", note: 'Avoidance mode.', val: 'none' },
       { em: '🐣', label: "I use ChatGPT occasionally. Results are meh.", note: 'Basic use, no real system.', val: 'basic' },
       { em: '😤', label: "I use it but the output sounds nothing like me.", note: 'Generic robot voice. Unusable without heavy editing.', val: 'generic' },
       { em: '⚡', label: "AI is already part of how I work.", note: 'Solid foundation. Want to go deeper.', val: 'solid' },
@@ -525,119 +517,118 @@ const Qs = [
     sub: 'The honest version, not the Instagram version.',
     opts: [
       { em: '🥺', label: "One sale. Just proof that this is real.", note: 'First sale validation.', val: 'first' },
-      { em: '💰', label: "$500–$1k/month I can actually count on.", note: 'Predictable, repeatable income.', val: 'consistent' },
+      { em: '💰', label: "$500 to $1k a month I can actually count on.", note: 'Predictable, repeatable income.', val: 'consistent' },
       { em: '🙌', label: "Enough to replace what I was making before.", note: 'Full income replacement.', val: 'replace' },
-      { em: '🏖️', label: "A business that runs when I\'m not in it.", note: 'True passive income. Systems over hustle.', val: 'passive' },
+      { em: '🏖️', label: "A business that runs when I'm not in it.", note: 'Systems over hustle.', val: 'passive' },
     ]
   },
 ];
 
-// ── RESULTS ────────────────────────────────────────────────────────
+// RESULTS
 function getResult(answers) {
   const [stage, block, setup, time, ai, goal] = answers;
 
-  // ── RESULT PROFILES ──────────────────────────────────────────
   const profiles = {
 
     absolute_beginner: {
       type: 'The Idea Hoarder',
       tagline: 'You\'ve been "about to start" for a while. That ends today.',
-      honest: 'You have more ideas saved in your Notes app than most people launch in a lifetime. The problem isn\'t information — you\'ve consumed plenty of that. The problem is that you\'re waiting for the right moment, the right idea, or the right version of yourself to show up. None of those are coming. What\'s coming is another six months of almosts.',
+      honest: "You have more ideas saved in your Notes app than most people launch in a lifetime. The problem isn't information. You've consumed plenty of that. The problem is that you're waiting for the right moment, the right idea, or the right version of yourself to show up. None of those are coming. What's coming is another six months of almosts.",
       steps: [
-        { n: 1, text: '<strong>Pick one product idea</strong> — not the best one, not the perfect one. The one you can validate and build in the next 30 days.' },
-        { n: 2, text: '<strong>Validate before you build</strong> — use the free <a href="https://jadejanosi.com/validate-your-digital-product/" style="color:var(--teal-mid);font-weight:600;">product validation guide</a> to confirm someone will actually pay for it.' },
-        { n: 3, text: '<strong>Read the Digital Products Guide</strong> — <a href="https://jadejanosi.com/digital-products-guide/" style="color:var(--teal-mid);font-weight:600;">start here</a> for the full picture on what to build and how.' },
+        { n: 1, text: '<strong>Pick one product idea.</strong> Not the best one, not the perfect one. The one you can validate and build in the next 30 days. Stuck? The free <a href="https://jadejanosi.com/digital-product-idea-generator/">Product Idea Generator</a> hands you one in about 3 minutes.' },
+        { n: 2, text: '<strong>Validate before you build.</strong> Use the free <a href="https://jadejanosi.com/validate-your-digital-product/">product validation guide</a> to confirm someone will actually pay for it.' },
+        { n: 3, text: '<strong>Read the Digital Products Guide.</strong> <a href="https://jadejanosi.com/digital-products-guide/">Start here</a> for the full picture on what to build and how.' },
       ],
       cta_label: 'The fastest place to start',
-      cta_text: 'Digital Product Blueprint — $37 →',
+      cta_text: 'Get the Digital Product Blueprint &rarr;',
       cta_url: 'https://jadejanosi.com/product/digital-product-blueprint/',
-      ghost_text: 'Browse everything →',
+      ghost_text: 'Browse everything &rarr;',
       ghost_url: 'https://jadejanosi.com/offers/',
     },
 
     needs_system: {
       type: 'The Busy Builder',
-      tagline: 'You\'re doing a lot. None of it is connected. That\'s the whole problem.',
-      honest: 'You\'re not lazy. You\'re not bad at this. You\'re running a business in 47-minute windows between everything else, with no system tying it together. So you get random sales when things align and nothing when they don\'t. The income is unpredictable because the process is unpredictable. A system fixes that — not motivation, not more content, not a new product.',
+      tagline: "You're doing a lot. None of it is connected. That's the whole problem.",
+      honest: "You're not lazy. You're not bad at this. You're running a business in 47-minute windows between everything else, with no system tying it together. So you get random sales when things line up and nothing when they don't. The income is unpredictable because the process is unpredictable. A system fixes that. Not motivation, not more content, not a new product.",
       steps: [
-        { n: 1, text: '<strong>Audit your current funnel</strong> — use the <a href="https://revenue-gap-calculator.vercel.app/" style="color:var(--teal-mid);font-weight:600;">free Revenue Gap Calculator</a> to find exactly where you\'re leaking money.' },
-        { n: 2, text: '<strong>Connect your content to your email list</strong> — every post should drive people to an opt-in, not to browse. If that\'s not happening, fix it first.' },
-        { n: 3, text: '<strong>Build a repeatable weekly system</strong> — <a href="https://jadejanosi.com/product/moms-ai-revenue-system/" style="color:var(--teal-mid);font-weight:600;">the Revenue System</a> is the operating layer that ties everything together in 47 minutes a week.' },
+        { n: 1, text: '<strong>Audit your current funnel.</strong> Use the <a href="https://revenue-gap-calculator.vercel.app/">free Revenue Gap Calculator</a> to find exactly where you\'re leaking money.' },
+        { n: 2, text: '<strong>Connect your content to your email list.</strong> Every post should drive people to an opt-in, not to browse. If that\'s not happening, fix it first.' },
+        { n: 3, text: '<strong>Stop buying pieces one at a time.</strong> <a href="https://jadejanosi.com/checkout/?add-to-cart=3755">Universal Business in a Box</a> is 10 products that already work together, plus a personal written audit of your business from me.' },
       ],
-      cta_label: 'The thing that connects it all',
-      cta_text: "Mom's AI Revenue System — $47 →",
-      cta_url: 'https://jadejanosi.com/product/moms-ai-revenue-system/',
-      ghost_text: 'See all products →',
+      cta_label: 'The whole system in one place',
+      cta_text: 'Get Universal Business in a Box &rarr;',
+      cta_url: 'https://jadejanosi.com/checkout/?add-to-cart=3755',
+      ghost_text: 'See all products &rarr;',
       ghost_url: 'https://jadejanosi.com/offers/',
     },
 
     traffic_problem: {
       type: 'The Invisible Expert',
-      tagline: 'You know your stuff. The algorithm just doesn\'t know you exist yet.',
-      honest: 'The content is fine. The product is probably fine. Nobody is seeing it — that\'s the whole problem. Organic reach is painfully slow when you\'re starting out, and "just keep posting" is technically true advice that also might take two years to pay off. You need a smarter content-to-list strategy, and probably some paid traffic to accelerate it.',
+      tagline: "You know your stuff. The algorithm just doesn't know you exist yet.",
+      honest: "The content is fine. The product is probably fine. Nobody is seeing it, and that's the whole problem. Organic reach is painfully slow when you're starting out, and \"just keep posting\" is technically true advice that might take two years to pay off. I posted every day for three months and made zero sales from it. Paid traffic is what changed everything for me.",
       steps: [
-        { n: 1, text: '<strong>Fix your content-to-list pipeline</strong> — every post needs a lead magnet CTA. If you don\'t have a lead magnet worth opting in for, build one this week.' },
-        { n: 2, text: '<strong>Start using comment triggers</strong> — Manychat auto-DMs convert engagement into subscribers 10x faster than a bio link. Set up at least one keyword trigger.' },
-        { n: 3, text: '<strong>Consider paid traffic</strong> — even $20/day to a lead magnet landing page compounds faster than six months of organic alone. Read the <a href="https://jadejanosi.com/meta-ads-best-practices/" style="color:var(--teal-mid);font-weight:600;">Meta ads guide</a> first.' },
+        { n: 1, text: '<strong>Fix your content-to-list pipeline.</strong> Every post needs a lead magnet CTA. If you don\'t have a lead magnet worth opting in for, build one this week.' },
+        { n: 2, text: '<strong>Start using comment triggers.</strong> Manychat auto-DMs turn engagement into subscribers far faster than a bio link. Set up at least one keyword trigger.' },
+        { n: 3, text: '<strong>Add paid traffic.</strong> Even a small daily budget pointed at the right offer compounds faster than months of organic alone. Read the <a href="https://jadejanosi.com/meta-ads-best-practices/">Meta ads guide</a> first.' },
       ],
-      cta_label: 'The ads playbook for digital products',
-      cta_text: 'Run the Ad: Meta Ads Masterclass — $49 →',
-      cta_url: 'https://jadejanosi.com/product/run-the-ad-meta-ads-masterclass/',
-      ghost_text: 'Browse everything →',
+      cta_label: 'The ads system for digital products',
+      cta_text: 'Get ASCENDANT Ads Manager &rarr;',
+      cta_url: 'https://jadejanosi.com/product/ascendant-ads-manager/',
+      ghost_text: 'Browse everything &rarr;',
       ghost_url: 'https://jadejanosi.com/offers/',
     },
 
     conversion_problem: {
       type: 'The Leaky Funnel',
-      tagline: 'Traffic isn\'t the problem. What happens after the click is.',
-      honest: 'People are finding you. They\'re clicking through. They\'re just not buying — and that means something in the path from "I\'m interested" to "here\'s my card" is broken. It\'s almost never the product. It\'s the sales page, the nurture sequence, the trust gap, or the offer framing. The fix is rarely more traffic — it\'s fixing the leak before you open the tap wider.',
+      tagline: "Traffic isn't the problem. What happens after the click is.",
+      honest: "People are finding you. They're clicking through. They're just not buying, which means something between \"I'm interested\" and \"here's my card\" is broken. It's almost never the product. It's the sales page, the nurture sequence, the trust gap, or the offer framing. The fix is rarely more traffic. Fix the leak before you open the tap wider.",
       steps: [
-        { n: 1, text: '<strong>Run the Revenue Gap Calculator</strong> — <a href="https://revenue-gap-calculator.vercel.app/" style="color:var(--teal-mid);font-weight:600;">free tool here</a> — it tells you exactly which gap is costing you the most money per month.' },
-        { n: 2, text: '<strong>Audit your nurture sequence</strong> — are you pitching too early? Are the first 5 emails actually building trust? Read the <a href="https://jadejanosi.com/email-nurture-sequence-digital-products/" style="color:var(--teal-mid);font-weight:600;">nurture sequence guide</a>.' },
-        { n: 3, text: '<strong>Rewrite your sales page hook</strong> — lead with the outcome, not the features. "47 minutes a week" converts. "7 modules" doesn\'t.' },
+        { n: 1, text: '<strong>Run your sales page through <a href="https://jadejanosi.com/product/eclipse-sales-page-premortem/">ECLIPSE</a>.</strong> Paste in your page or URL and it tells you why buyers are bailing before you spend another dollar sending them there.' },
+        { n: 2, text: '<strong>Audit your nurture sequence.</strong> Are you pitching too early? Are the first 5 emails actually building trust? Read the <a href="https://jadejanosi.com/email-nurture-sequence-digital-products/">nurture sequence guide</a>.' },
+        { n: 3, text: '<strong>Rewrite your sales page hook.</strong> Lead with the outcome, not the features. If you want the psychology behind why buyers say yes, <a href="https://jadejanosi.com/product/venus-jades-buyer-psychology-bible/">VENUS</a> goes deep.' },
       ],
-      cta_label: 'The system that closes the loop',
-      cta_text: "Mom's AI Revenue System — $47 →",
-      cta_url: 'https://jadejanosi.com/product/moms-ai-revenue-system/',
-      ghost_text: 'See all products →',
+      cta_label: 'Find the leak first',
+      cta_text: 'Run ECLIPSE on your sales page &rarr;',
+      cta_url: 'https://jadejanosi.com/product/eclipse-sales-page-premortem/',
+      ghost_text: 'See all products &rarr;',
       ghost_url: 'https://jadejanosi.com/offers/',
     },
 
     ai_voice: {
       type: 'The Robot Whisperer',
       tagline: 'AI is supposed to sound like you. Yours sounds like a LinkedIn post from 2019.',
-      honest: 'You\'re not bad at AI — you just haven\'t given it the right input. AI reflects what you feed it. Feed it a vague prompt and you get a vague, generic output. Feed it your brand voice, your audience\'s pain points, and your specific way of saying things — and suddenly it produces content that actually sounds like it came from you. The tool isn\'t broken. The process is.',
+      honest: "You're not bad at AI. You just haven't given it the right input. AI reflects what you feed it. Feed it a vague prompt and you get vague, generic output. Feed it your brand voice, your audience's pain points, and your specific way of saying things, and suddenly it produces content that actually sounds like you. The tool isn't broken. The process is.",
       steps: [
-        { n: 1, text: '<strong>Extract your brand voice first</strong> — paste three pieces of your best content into ChatGPT and ask it to analyze your tone, sentence structure, and vocabulary. Use that as the foundation for every prompt going forward.' },
-        { n: 2, text: '<strong>Stop using generic prompts</strong> — "write me a caption about digital products" is not a prompt. "Write a caption in the tone of the examples above, targeting moms who have products but no consistent income, hook first" is a prompt.' },
-        { n: 3, text: '<strong>Build the voice layer once</strong> — <a href="https://jadejanosi.com/product/the-human-layer/" style="color:var(--teal-mid);font-weight:600;">The Human Layer</a> gives you the framework to do this properly so you never get robot output again.' },
+        { n: 1, text: '<strong>Extract your brand voice first.</strong> Paste three pieces of your best content into ChatGPT and ask it to analyze your tone, sentence structure, and vocabulary. Use that as the foundation for every prompt going forward.' },
+        { n: 2, text: '<strong>Stop using generic prompts.</strong> "Write me a caption about digital products" is not a prompt. "Write a caption in the tone of the examples above, for fitness coaches who have a product but no consistent sales, hook first" is a prompt.' },
+        { n: 3, text: '<strong>Build the voice layer once.</strong> <a href="https://jadejanosi.com/product/the-human-layer/">The Human Layer</a> gives you the framework to do this properly, and <a href="https://jadejanosi.com/product/brand-voice-lab/">Brand Voice Lab</a> writes copy in your voice for you.' },
       ],
       cta_label: 'Make AI sound like you',
-      cta_text: 'The Human Layer — $24 →',
+      cta_text: 'Get The Human Layer &rarr;',
       cta_url: 'https://jadejanosi.com/product/the-human-layer/',
-      ghost_text: 'Browse everything →',
+      ghost_text: 'Browse everything &rarr;',
       ghost_url: 'https://jadejanosi.com/offers/',
     },
 
     ready_to_scale: {
       type: 'The Ready One',
-      tagline: 'You\'re not here for motivation. You\'re here to find the next lever.',
-      honest: 'You\'ve done the hard part — you have proof of concept. Sales are happening. Now it\'s about compounding what\'s working: more traffic through paid ads, more revenue per buyer through order bumps and upsells, and more automation so the business runs without you manually holding it up. The next lever is almost always paid traffic or funnel optimization. Sometimes both.',
+      tagline: "You're not here for motivation. You're here to find the next lever.",
+      honest: "You've done the hard part. You have proof of concept. Sales are happening. Now it's about compounding what's working: more traffic through paid ads, more revenue per buyer through order bumps and upsells, and more automation so the business runs without you holding it up by hand. The next lever is almost always paid traffic or funnel optimization. Sometimes both.",
       steps: [
-        { n: 1, text: '<strong>Add an order bump and upsell</strong> — if you\'re not capturing extra revenue at checkout and in the 24 hours post-purchase, you\'re leaving the easiest money on the table. Do this before scaling ad spend.' },
-        { n: 2, text: '<strong>Run the Revenue Gap Calculator</strong> — <a href="https://revenue-gap-calculator.vercel.app/" style="color:var(--teal-mid);font-weight:600;">free here</a> — confirms which gap is worth your energy most right now.' },
-        { n: 3, text: '<strong>Build a paid traffic system</strong> — <a href="https://jadejanosi.com/product/run-the-ad-meta-ads-masterclass/" style="color:var(--teal-mid);font-weight:600;">Run the Ad</a> gives you the full Meta ads playbook for digital products, from first creative to profitable scaling.' },
+        { n: 1, text: '<strong>Add an order bump and upsell.</strong> If you\'re not capturing extra revenue at checkout and in the 24 hours after purchase, you\'re leaving the easiest money on the table. Do this before you scale ad spend.' },
+        { n: 2, text: '<strong>Run the Revenue Gap Calculator.</strong> It\'s <a href="https://revenue-gap-calculator.vercel.app/">free here</a> and confirms which gap is most worth your energy right now.' },
+        { n: 3, text: '<strong>Build a paid traffic system.</strong> <a href="https://jadejanosi.com/product/ascendant-ads-manager/">ASCENDANT</a> is my Meta ads masterclass plus an 11-module tool suite, from your first hook to scaling without resetting the learning phase.' },
       ],
-      cta_label: 'Scale what\'s working',
-      cta_text: 'Run the Ad: Meta Ads Masterclass — $49 →',
-      cta_url: 'https://jadejanosi.com/product/run-the-ad-meta-ads-masterclass/',
-      ghost_text: 'See all products →',
+      cta_label: "Scale what's working",
+      cta_text: 'Get ASCENDANT Ads Manager &rarr;',
+      cta_url: 'https://jadejanosi.com/product/ascendant-ads-manager/',
+      ghost_text: 'See all products &rarr;',
       ghost_url: 'https://jadejanosi.com/offers/',
     },
 
   };
 
-  // ── SCORING LOGIC ──────────────────────────────────────────────
+  // SCORING LOGIC
   const s = { absolute_beginner:0, needs_system:0, traffic_problem:0, conversion_problem:0, ai_voice:0, ready_to_scale:0 };
 
   // Stage
@@ -679,15 +670,15 @@ function getResult(answers) {
   return profiles[winner];
 }
 
-// ── LOADING MESSAGES ──────────────────────────────────────────────
+// LOADING MESSAGES
 const loadingLines = [
   'Reading your answers very carefully...',
-  'Cross-referencing with 8 years of marketing experience...',
+  'Cross-referencing with close to a decade of marketing experience...',
   'Ignoring the voice that says "just tell them to hustle more"...',
   'Almost there...',
 ];
 
-// ── STATE ─────────────────────────────────────────────────────────
+// STATE
 let cur = 0;
 let answers = new Array(Qs.length).fill(undefined);
 
@@ -730,9 +721,9 @@ function renderQ() {
       `).join('')}
     </div>
     <div class="q-nav">
-      <button class="btn-back" onclick="goBack()" ${cur===0?'style="opacity:0;pointer-events:none"':''}>← Back</button>
+      <button class="btn-back" onclick="goBack()" ${cur===0?'style="opacity:0;pointer-events:none"':''}>&larr; Back</button>
       <button class="btn-next ${answers[cur]!==undefined?'on':''}" id="nxtBtn" onclick="goNext()">
-        ${cur===Qs.length-1 ? 'Show me my result →' : 'Next →'}
+        ${cur===Qs.length-1 ? 'Show me my result &rarr;' : 'Next &rarr;'}
       </button>
     </div>
   `;
@@ -754,7 +745,7 @@ function goBack() {
   if (cur>0) { cur--; renderQ(); }
 }
 
-// ── GATE ──────────────────────────────────────────────────────────
+// GATE
 function showGate() {
   document.getElementById('qContainer').innerHTML = '';
   document.getElementById('progressFill').style.width = '100%';
@@ -768,7 +759,7 @@ function showGate() {
     <div class="gate">
       <div class="gate-kicker">Your result is ready</div>
       <h2>One last thing before I show you where to start.</h2>
-      <p>Drop your email and I'll send your result straight to your inbox — plus the occasional thing worth actually reading.</p>
+      <p>Drop your email and I'll send your result straight to your inbox, plus the occasional thing actually worth reading.</p>
       <div class="teaser">
         <div class="teaser-inner">
           <div class="teaser-label">You are</div>
@@ -785,7 +776,7 @@ function showGate() {
         <input type="email" id="eInput" placeholder="your@email.com" autocomplete="email">
         <div class="err" id="eErr">That doesn't look like a valid email.</div>
       </div>
-      <button class="btn-unlock" onclick="submitGate()">Show me my result →</button>
+      <button class="btn-unlock" onclick="submitGate()">Show me my result &rarr;</button>
       <p class="privacy">No spam. Unsubscribe any time. I'm not that person.</p>
     </div>
   `;
@@ -826,7 +817,7 @@ async function submitGate() {
   }, 2400);
 }
 
-// ── RESULT ────────────────────────────────────────────────────────
+// RESULT
 function showResult() {
   const vals = answers.map((a,i) => Qs[i].opts[a]?.val);
   const res  = getResult(vals);
@@ -840,7 +831,7 @@ function showResult() {
     <div class="result-body">
       <p class="result-honest">${res.honest}</p>
       <div class="start-here-box">
-        <div class="start-here-label">Where to start — in order</div>
+        <div class="start-here-label">Where to start, in order</div>
         <div class="start-steps">
           ${res.steps.map(s=>`
             <div class="start-step">
